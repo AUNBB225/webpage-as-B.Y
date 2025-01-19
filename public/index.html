@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจัดการโรงเรียนบัวใหญ่</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --accent-color: #e74c3c;
+      --background-color: #ffffff;
+      --text-color: #34495e;
+    }
+    body {
+      font-family: "Kanit", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+    .navbar-brand img {
+      max-height: 40px;
+    }
+    .nav-link {
+      color: var(--primary-color) !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+      transform: translateY(-2px);
+    }
+    .school-name {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin: 20px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    .category-title {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 10px;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    .card-text {
+      color: var(--text-color);
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+    .btn-check-points {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 30px auto;
+      max-width: 250px;
+    }
+    .btn-check-points:hover {
+      background-color: #c0392b;
+      transform: scale(1.1);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .scrolling-text {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 0px 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .scrolling-text p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 30s linear infinite;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 0);
+      }
+    }
+    .gif-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .gif-container img {
+      max-width: 100px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Scrolling Text -->
+
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://lh3.googleusercontent.com/d/1yRTamneTYiTILAqCutvp3J2H2M1ij_MA" alt="โรงเรียนบัวใหญ่">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#behavior">ความประพฤติ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#attendance">การมาเรียน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#points">ระบบคะแนน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page8.html">พิมพ์รายชื่อนักเรียนมาสาย</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page9.html">บันทึกการเข้าเรียน</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/page10.html">พิมพ์รายงานการเข้าเรียน</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1 class="school-name">จัดการความปรพฤตินักเรียนโรงเรียนบัวใหญ่</h1>
+    <div class="scrolling-text">
+        <p>ยินดีต้อนรับสู่ระบบคะแนนความประพฤติโรงเรียนบัวใหญ่</p>
+      </div>
+    <!-- GIF Container -->
+    <div class="gif-container">
+      <img src="/student.gif" alt="School Activities GIF">
+    </div>
+
+    <a href="/page2.html" class="btn btn-check-points">
+      <i class="fas fa-star me-2"></i>ตรวจสอบคะแนน
+    </a>
+
+    <!-- Behavior Section -->
+    <section id="behavior">
+      <h2 class="category-title"><i class="fas fa-user-check me-2"></i>ความประพฤติ</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <h5 class="card-title">ครูตรวจสอบความประพฤติ นร.</h5>
+              <p class="card-text">ระบบสำหรับครูในการตรวจสอบและบันทึกความประพฤติของนักเรียน</p>
+              <a href="/page1.html" class="btn btn-primary">เข้าสู่ระบบ</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+              <h5 class="card-title">นักเรียนตรวจสอบความประพฤติ</h5>
+              <p class="card-text">นักเรียนสามารถตรวจสอบข้อมูลความประพฤติของตนเองได้</p>
+              <a href="/page2.html" class="btn btn-primary">ตรวจสอบ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance">
+      <h2 class="category-title"><i class="fas fa-clock me-2"></i>การมาเรียน</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+              <h5 class="card-title">รายงานการมาสายประจำเดือน</h5>
+              <p class="card-text">ดูรายงานสรุปการมาสายของนักเรียนในแต่ละเดือน</p>
+              <a href="/page3.html" class="btn btn-primary">ดูรายงาน</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+              <h5 class="card-title">รายงานการมาสายรายวัน/รายสัปดาห์</h5>
+              <p class="card-text">ดูรายงานสรุปการมาสายของนักเรียน</p>
+              <a href="/page6.html" class="btn btn-primary">ดูรายงาน</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Points System Section -->
+    <section id="points">
+      <h2 class="category-title"><i class="fas fa-star me-2"></i>การบันทึกคะแนนความประพฤติและการมาสาย</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+              <h5 class="card-title">ระบบตัดคะแนน</h5>
+              <p class="card-text">จัดการคะแนนความประพฤติของนักเรียน เพิ่มหรือตัดคะแนนตามเกณฑ์</p>
+              <a href="/page4.html" class="btn btn-primary">จัดการคะแนน</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="feature-icon"><i class="fas fa-user-clock"></i></div>
+            <h5 class="card-title">บันทึกการมาสายระบุครั้ง</h5>
+            <p class="card-text">บันทึกและตรวจสอบการมาสายของนักเรียน</p>
+            <a href="/page5.html" class="btn btn-primary">เช็คเวลา</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="feature-icon"><i class="fas fa-user-clock"></i></div>
+            <h5 class="card-title">บันทึกการมาสายประจำวัน</h5>
+            <p class="card-text">บันทึกและตรวจสอบการมาสายของนักเรียนรายวัน</p>
+            <a href="/page7.html" class="btn btn-primary">เช็คเวลา</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
